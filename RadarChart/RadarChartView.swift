@@ -83,7 +83,7 @@ open class RadarChartView: UIView {
 
             let label = UILabel()
             label.lineBreakMode = .byWordWrapping
-            label.numberOfLines = 0
+            label.numberOfLines = 3
             label.textColor = fontColor
             let textString = NSMutableAttributedString(
                 string: text,
@@ -96,7 +96,7 @@ open class RadarChartView: UIView {
             textString.addAttribute(.paragraphStyle, value: paragraphStyle, range: textRange)
             textString.addAttribute(.kern, value: letterSpacing, range: textRange)
             label.attributedText = textString
-            label.sizeToFit()
+            label.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
             return label
         }
     }
